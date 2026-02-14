@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Laiba ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: white;
+            color: #ff4d6d;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        #music {
+            display: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255,255,255,0.8);
+            font-size: 24px;
+            animation: up 6s infinite ease-in;
+        }
+
+        @keyframes up {
+            0% {
+                transform: translateY(100vh) scale(0.6);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        #letter {
+            margin-top: 30px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        #signature {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Laiba ❤️</h1>
+        <p>8 months with you, and I still choose you every day.</p>
+
+        <button onclick="openPage()">Open Love Letter</button>
+
+        <div id="letter" style="display:none;">
+            <p>Laiba,</p>
+            <p>Every moment we’ve shared has become a part of me. You are my calm, my strength, and my favorite smile.</p>
+            <p>I don’t need perfect — I just need you. Thank you for being mine.</p>
+            <p id="signature">— Saim</p>
+        </div>
+    </div>
+
+    <iframe id="music" src="https://www.youtube.com/embed/OMOGaugKpzs?enablejsapi=1"></iframe>
+
+    <script>
+        function openPage() {
+            document.getElementById("letter").style.display = "block";
+            document.getElementById("music").src += "&autoplay=1";
+
+            // hearts
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.textContent = "❤";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
+
+</body>
+</html>
