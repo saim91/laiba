@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Laiba ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            width: 350px;
+            z-index: 2;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #ff4d6d;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #secret {
+            margin-top: 20px;
+            display: none;
+            font-size: 17px;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255,255,255,0.7);
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        iframe {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Laiba ❤️</h1>
+        <p>8 months with you…<br>
+        and I still choose you every single day.</p>
+
+        <button onclick="startLove()">Click Me</button>
+
+        <div id="secret">
+            You are my peace,<br>
+            my comfort,<br>
+            and my favorite person. 🌹
+        </div>
+    </div>
+
+    <iframe id="music"
+        src="https://www.youtube.com/embed/OMOGaugKpzs?enablejsapi=1">
+    </iframe>
+
+    <script>
+        function startLove() {
+            document.getElementById("secret").style.display = "block";
+            document.getElementById("music").src += "&autoplay=1";
+
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.innerHTML = "❤";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
+
+</body>
+  </html>
